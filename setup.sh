@@ -81,7 +81,7 @@ http_access deny to_localhost
 icp_access deny all
 htcp_access deny all
 
-http_port 14017
+http_port 14014
 hierarchy_stoplist cgi-bin ? # systemctl status squid.service after installation squid and danted by this script
                              # ERROR: Directive 'hierarchy_stoplist' is obsolete.
 access_log /var/log/squid/access.log squid
