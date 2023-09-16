@@ -76,7 +76,7 @@ http_access deny !Safe_ports
 http_access deny to_localhost
 icp_access deny all
 htcp_access deny all
-http_port 14016
+http_port 35948
 hierarchy_stoplist cgi-bin ? # systemctl status squid.service after installation squid and danted by this script
                              # ERROR: Directive 'hierarchy_stoplist' is obsolete.
 access_log /var/log/squid/access.log squid
@@ -103,7 +103,7 @@ systemctl restart squid.service
 # dante conf
 cat <<EOT > /etc/danted.conf
 logoutput: /var/log/socks.log
-internal: 0.0.0.0 port = 14012
+internal: 0.0.0.0 port = 35949
 external: $default_int
 socksmethod: username
 clientmethod: none
@@ -128,7 +128,7 @@ echo "--------------------------------------------------------------------------
 echo "--------------------------------------------------------------------------------------------------"
 echo "--------------------------------------------------------------------------------------------------"
 echo "Proxy IP: $external_ip"
-echo "HTTP port: 14016"
-echo "SOCKS5 port: 14012"
+echo "HTTP port: 35948"
+echo "SOCKS5 port: 35949"
 echo "Username: $username"
 echo "Password: $password"
